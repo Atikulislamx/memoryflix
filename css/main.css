@@ -1,0 +1,149 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #081021 0%, #05070d 42%, #05070d 100%);
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  background: rgba(4, 8, 18, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.brand span {
+  opacity: 0.76;
+  font-size: 0.82rem;
+}
+
+.top-nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.hero {
+  padding: clamp(2.25rem, 8vw, 7rem) clamp(1rem, 4vw, 3rem);
+  max-width: 800px;
+}
+
+.hero-kicker {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  margin: 0.5rem 0 1rem;
+}
+
+.hero p {
+  max-width: 65ch;
+  line-height: 1.65;
+}
+
+.hero-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.section-block {
+  padding: 0.5rem clamp(1rem, 4vw, 3rem) 2rem;
+}
+
+.section-heading h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.continue-card {
+  display: grid;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.continue-card h3,
+.continue-card p {
+  margin: 0;
+}
+
+.progress {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #ff6ea8, #7f56ff);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.collection-card {
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  min-height: 120px;
+  display: grid;
+  align-content: space-between;
+  gap: 0.5rem;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.collection-card:hover,
+.collection-card:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(127, 86, 255, 0.7);
+  background: rgba(127, 86, 255, 0.12);
+}
+
+.collection-card h3,
+.collection-card p {
+  margin: 0;
+}
+
+.site-footer {
+  padding: 2.2rem 1rem 2.6rem;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.footer-easter-egg {
+  margin-top: 0.35rem;
+  opacity: 0.45;
+  font-size: 0.84rem;
+  text-transform: lowercase;
+}
