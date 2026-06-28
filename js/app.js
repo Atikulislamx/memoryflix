@@ -48,9 +48,12 @@
     }
   };
 
-  const createCard = ({ title, description, url, subtitle }) => {
+  const createCard = ({ title, description, url, subtitle, isPlaceholder = false }) => {
     const card = document.createElement(url ? "a" : "article");
     card.className = "collection-card";
+    if (isPlaceholder) {
+      card.classList.add("is-placeholder");
+    }
     if (url) {
       card.href = url;
     }
@@ -60,6 +63,14 @@
 
     const copy = document.createElement("p");
     copy.textContent = subtitle || description || placeholders.missing;
+
+    if (isPlaceholder) {
+      const mediaPlaceholder = document.createElement("div");
+      mediaPlaceholder.className = "media-placeholder";
+      mediaPlaceholder.setAttribute("aria-hidden", "true");
+      mediaPlaceholder.textContent = "🦋";
+      card.appendChild(mediaPlaceholder);
+    }
 
     card.append(titleElement, copy);
     return card;
@@ -73,7 +84,7 @@
 
     if (!items.length) {
       continueGrid.appendChild(
-        createCard({ title: "Continue Watching", subtitle: placeholders.continue })
+        createCard({ title: "Continue Watching", subtitle: placeholders.continue, isPlaceholder: true })
       );
       return;
     }
@@ -112,7 +123,13 @@
     }
 
     if (!item) {
-      featuredMemory.textContent = "Loading Archive...";
+      featuredMemory.innerHTML = "";
+      const fallback = createCard({
+        title: "Featured Memory",
+        subtitle: "Loading Archive...",
+        isPlaceholder: true
+      });
+      featuredMemory.appendChild(fallback);
       return;
     }
 
@@ -139,13 +156,13 @@
     }
   };
 
-  const renderListPreview = (target, heading, body, href) => {
+  const renderListPreview = (target, heading, body, href, isPlaceholder = false) => {
     if (!target) {
       return;
     }
 
     target.innerHTML = "";
-    const item = createCard({ title: heading, subtitle: body, url: href });
+    const item = createCard({ title: heading, subtitle: body, url: href, isPlaceholder });
     target.appendChild(item);
   };
 
@@ -185,54 +202,70 @@
       const fragment = document.createDocumentFragment();
       collections.forEach((item) => fragment.appendChild(createCard(item)));
       if (!collections.length) {
-        fragment.appendChild(createCard({ title: "Memory Collections", subtitle: placeholders.missing }));
+        fragment.appendChild(
+          createCard({ title: "Memory Collections", subtitle: placeholders.missing, isPlaceholder: true })
+        );
       }
       collectionsGrid.appendChild(fragment);
     }
 
+    const hasDiary = Boolean(diary[0]);
     renderListPreview(
       diaryPreview,
       diary[0]?.title || "Diary",
       diary[0]?.subtitle || "This chapter hasn't been written yet.",
-      "pages/diary.html"
+      "pages/diary.html",
+      !hasDiary
     );
+    const hasGallery = Boolean(gallery.albums?.[0]);
     renderListPreview(
       galleryPreview,
       gallery.albums?.[0]?.title || "Gallery",
       "More memories are being restored...",
-      "pages/gallery.html"
+      "pages/gallery.html",
+      !hasGallery
     );
+    const hasChat = Boolean(chats.threads?.[0]);
     renderListPreview(
       chatPreview,
       chats.threads?.[0]?.title || "Chat Archive",
       chats.threads?.[0]?.preview || "Synchronizing conversations...",
-      "pages/chats.html"
+      "pages/chats.html",
+      !hasChat
     );
+    const hasVideo = Boolean(videos.trailer?.title);
     renderListPreview(
       videoPreview,
       videos.trailer?.title || "Video Archive",
       videos.trailer?.status || "Loading Archive...",
-      "pages/videos.html"
+      "pages/videos.html",
+      !hasVideo
     );
+    const hasTimeline = Boolean(timeline[0]);
     renderListPreview(
       timelinePreview,
       timeline[0]?.title || "Timeline",
       "Relationship milestones and future plans are being restored.",
-      "pages/timeline.html"
+      "pages/timeline.html",
+      !hasTimeline
     );
+    const hasSoundtrack = Boolean(soundtrack.tracks?.length);
     renderListPreview(
       soundtrackPreview,
       soundtrack.playlistTitle || "Soundtrack",
       soundtrack.tracks?.length
         ? `${soundtrack.tracks.length} tracks in the archive soundtrack.`
         : "Songs for this chapter are loading...",
-      "pages/soundtrack.html"
+      "pages/soundtrack.html",
+      !hasSoundtrack
     );
+    const hasVault = Boolean(vault.isProtected || vault.placeholder);
     renderListPreview(
       vaultPreview,
       vault.isProtected ? "Secret Vault (Locked)" : "Secret Vault",
       vault.placeholder || "Preparing secure memories...",
-      "pages/secret.html"
+      "pages/secret.html",
+      !hasVault
     );
 
     const soundtrackController = await initSoundtrack(soundtrack);

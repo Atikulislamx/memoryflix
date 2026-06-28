@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AKHI Archive butterfly icon">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111c38"/>
+      <stop offset="100%" stop-color="#05070d"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#85a7ff"/>
+      <stop offset="100%" stop-color="#c8d6ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <g fill="url(#wing)">
+    <path d="M30 30c-9-10-18-8-18-2 0 6 7 10 16 7z"/>
+    <path d="M34 30c9-10 18-8 18-2 0 6-7 10-16 7z"/>
+    <path d="M31 34c-8 8-12 14-8 17 5 3 11-2 11-13z"/>
+    <path d="M33 34c8 8 12 14 8 17-5 3-11-2-11-13z"/>
+  </g>
+  <rect x="31" y="22" width="2" height="22" rx="1" fill="#eff4ff"/>
+</svg>

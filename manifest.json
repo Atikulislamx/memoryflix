@@ -1,0 +1,22 @@
+{
+  "name": "AKHI//ARCHIVE",
+  "short_name": "AKHI",
+  "description": "A cinematic memory archive where every memory has a chapter.",
+  "theme_color": "#05070d",
+  "background_color": "#05070d",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

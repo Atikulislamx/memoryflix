@@ -46,15 +46,26 @@
     }
   };
 
-  const createCard = (title, body, meta = "") => {
+  const createCard = (title, body, meta = "", isPlaceholder = false) => {
     const card = document.createElement("article");
     card.className = "data-card";
+    if (isPlaceholder) {
+      card.classList.add("is-placeholder");
+    }
 
     const heading = document.createElement("h2");
     heading.textContent = title;
 
     const content = document.createElement("p");
     content.textContent = body;
+
+    if (isPlaceholder) {
+      const mediaPlaceholder = document.createElement("div");
+      mediaPlaceholder.className = "media-placeholder";
+      mediaPlaceholder.setAttribute("aria-hidden", "true");
+      mediaPlaceholder.textContent = "🦋";
+      card.appendChild(mediaPlaceholder);
+    }
 
     card.append(heading, content);
 
@@ -103,7 +114,7 @@
       return;
     }
 
-    listTarget.appendChild(createCard(config.title, config.subtitle));
+    listTarget.appendChild(createCard(config.title, config.subtitle, "", true));
   };
 
   const loadPage = async () => {
@@ -125,7 +136,7 @@
     } catch {
       if (listTarget) {
         listTarget.innerHTML = "";
-        listTarget.appendChild(createCard(config.title, config.subtitle));
+        listTarget.appendChild(createCard(config.title, config.subtitle, "", true));
       }
       if (placeholderTarget) {
         placeholderTarget.textContent = "This chapter is still waiting for its full story.";

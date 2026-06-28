@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="AKHI Archive social preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#121f3f"/>
+      <stop offset="55%" stop-color="#0a1022"/>
+      <stop offset="100%" stop-color="#04060c"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#7da3ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#d5e2ff" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1056" height="486" rx="28" fill="rgba(255,255,255,0.03)" stroke="rgba(173,198,255,0.3)"/>
+  <text x="120" y="218" fill="#9ab9ff" font-family="Inter, Segoe UI, sans-serif" font-size="28" letter-spacing="4">AKHI//ARCHIVE</text>
+  <text x="120" y="320" fill="#f7f9ff" font-family="Inter, Segoe UI, sans-serif" font-size="72" font-weight="700">Every Memory</text>
+  <text x="120" y="398" fill="#f7f9ff" font-family="Inter, Segoe UI, sans-serif" font-size="72" font-weight="700">Has a Chapter.</text>
+  <g fill="url(#line)">
+    <path d="M898 240c-70-80-140-60-140-16 0 44 56 72 126 53z"/>
+    <path d="M970 240c70-80 140-60 140-16 0 44-56 72-126 53z"/>
+    <path d="M912 278c-68 66-98 112-68 136 32 21 83-14 86-95z"/>
+    <path d="M956 278c68 66 98 112 68 136-32 21-83-14-86-95z"/>
+  </g>
+  <rect x="932" y="168" width="10" height="180" rx="5" fill="#edf3ff"/>
+</svg>
