@@ -72,6 +72,25 @@ body {
   gap: 0.55rem;
 }
 
+.data-card.is-placeholder,
+.placeholder {
+  background:
+    radial-gradient(circle at top right, rgba(125, 163, 255, 0.2), rgba(255, 255, 255, 0.03) 45%),
+    rgba(255, 255, 255, 0.03);
+  border-style: dashed;
+}
+
+.media-placeholder {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.75rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  background: rgba(125, 163, 255, 0.18);
+  border: 1px solid rgba(177, 201, 255, 0.42);
+}
+
 .data-card h2,
 .data-card p,
 .data-card ul {
@@ -81,7 +100,6 @@ body {
 .placeholder {
   border-radius: 0.95rem;
   border: 1px dashed rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.03);
   padding: 1rem;
 }
 
