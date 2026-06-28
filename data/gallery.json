@@ -1,0 +1,17 @@
+{
+  "albums": [
+    {
+      "title": "Opening Frames",
+      "date": "2026-01-14",
+      "favorites": 2,
+      "items": 8
+    }
+  ],
+  "recent": [
+    {
+      "title": "Light Through Glass",
+      "date": "2026-02-04",
+      "favorite": true
+    }
+  ]
+}

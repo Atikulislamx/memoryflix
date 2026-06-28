@@ -1,0 +1,92 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
+  color: #f5f7ff;
+  background: linear-gradient(180deg, #081021, #05070d 48%, #05070d);
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+.page-header {
+  position: sticky;
+  top: 0;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(4, 8, 18, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.page-header a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.page-hero {
+  padding: clamp(2rem, 8vw, 5rem) clamp(1rem, 4vw, 3rem) 1rem;
+  max-width: 860px;
+}
+
+.page-hero h1,
+.page-hero p {
+  margin: 0;
+}
+
+.page-hero p {
+  margin-top: 0.8rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.page-content {
+  padding: 0.5rem clamp(1rem, 4vw, 3rem) 2.5rem;
+}
+
+.data-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.data-card {
+  border-radius: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.055);
+  padding: 1rem;
+  min-height: 130px;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.data-card h2,
+.data-card p,
+.data-card ul {
+  margin: 0;
+}
+
+.placeholder {
+  border-radius: 0.95rem;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+}
+
+.page-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  opacity: 0.72;
+}
