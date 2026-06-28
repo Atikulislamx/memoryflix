@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AKHI//ARCHIVE — Every Memory Has a Chapter."
+    />
+    <title>AKHI//ARCHIVE</title>
+    <link rel="stylesheet" href="css/loading.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="loading-screen" id="loadingScreen" aria-live="polite">
+      <p class="loading-line" id="loadingLine">Preparing Memories...</p>
+    </div>
+
+    <section class="intro-screen hidden" id="introScreen" aria-label="Intro">
+      <p class="intro-kicker">AKHI//ARCHIVE</p>
+      <h1>Every Memory Has a Chapter.</h1>
+      <button id="beginArchiveBtn" class="btn-primary">Enter Archive</button>
+    </section>
+
+    <section
+      class="profile-screen hidden"
+      id="profileScreen"
+      aria-label="Profile selection"
+    >
+      <h2>Who's watching memories today?</h2>
+      <button class="profile-card" id="profileAkhiBtn">
+        <span class="profile-avatar" aria-hidden="true">🦋</span>
+        <span>🦋 Ꮲꫝ፝֟፝ᴋʜɪ 🦋</span>
+      </button>
+      <p class="subtle-note">Previously known as Mayabi.</p>
+    </section>
+
+    <div class="app hidden" id="appRoot">
+      <header class="top-nav">
+        <div class="brand">
+          <strong>AKHI//ARCHIVE</strong>
+          <span>Every Memory Has a Chapter.</span>
+        </div>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#continue">Continue Watching</a></li>
+            <li><a href="#collections">Collections</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="hero">
+          <p class="hero-kicker">Welcome Back, Akhi.</p>
+          <h1>A story written with memories.</h1>
+          <p>
+            This archive is a living cinematic journey. New chapters are always
+            being restored.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary" type="button">Resume Chapter</button>
+            <button class="btn-secondary" type="button">View Diary</button>
+          </div>
+        </section>
+
+        <section class="section-block" id="continue">
+          <div class="section-heading">
+            <h2>Continue Watching</h2>
+          </div>
+          <article class="continue-card">
+            <div>
+              <h3>Opening Diary...</h3>
+              <p>This chapter hasn't been written yet.</p>
+            </div>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="35"
+            >
+              <span style="width: 35%"></span>
+            </div>
+          </article>
+        </section>
+
+        <section class="section-block" id="collections">
+          <div class="section-heading">
+            <h2>Memory Collections</h2>
+          </div>
+          <div class="card-grid" id="collectionsGrid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>AKHI//ARCHIVE · Built as a timeless memory archive.</p>
+        <p class="footer-easter-egg">the things i never asked for</p>
+      </footer>
+    </div>
+
+    <script src="js/loading.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
