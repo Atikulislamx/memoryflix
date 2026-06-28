@@ -13,21 +13,27 @@
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-    <div class="loading-screen" id="loadingScreen" aria-live="polite">
-      <p class="loading-line" id="loadingLine">Preparing Memories...</p>
-    </div>
+    <section class="boot-screen" id="bootScreen" aria-live="polite" aria-label="Cinematic opening sequence">
+      <div class="boot-overlay"></div>
+      <div class="boot-particles" id="bootParticles" aria-hidden="true"></div>
+      <div class="boot-content">
+        <p class="boot-kicker">AKHI//ARCHIVE</p>
+        <h1 id="bootTitle">Entering the archive...</h1>
+        <p class="boot-message" id="bootMessage">Black screen. A quiet memory begins.</p>
+        <div class="boot-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bootProgressBar">
+          <span id="bootProgressFill"></span>
+        </div>
+      </div>
+    </section>
 
     <section class="intro-screen hidden" id="introScreen" aria-label="Intro">
       <p class="intro-kicker">AKHI//ARCHIVE</p>
-      <h1>Every Memory Has a Chapter.</h1>
+      <h2>Every Memory Has a Chapter.</h2>
+      <p class="intro-subtext">A private universe, restored one scene at a time.</p>
       <button id="beginArchiveBtn" class="btn-primary">Enter Archive</button>
     </section>
 
-    <section
-      class="profile-screen hidden"
-      id="profileScreen"
-      aria-label="Profile selection"
-    >
+    <section class="profile-screen hidden" id="profileScreen" aria-label="Profile selection">
       <h2>Who's watching memories today?</h2>
       <button class="profile-card" id="profileAkhiBtn">
         <span class="profile-avatar" aria-hidden="true">🦋</span>
@@ -47,8 +53,14 @@
             <li><a href="#hero">Home</a></li>
             <li><a href="#continue">Continue Watching</a></li>
             <li><a href="#collections">Collections</a></li>
+            <li><a href="#previews">Archive</a></li>
           </ul>
         </nav>
+        <div class="soundtrack-controls" aria-label="Soundtrack controls">
+          <button id="soundtrackToggle" class="btn-secondary" type="button" aria-pressed="false">Sound: Off</button>
+          <label for="soundtrackVolume" class="sr-only">Soundtrack volume</label>
+          <input id="soundtrackVolume" type="range" min="0" max="100" value="55" />
+        </div>
       </header>
 
       <main>
@@ -56,41 +68,54 @@
           <p class="hero-kicker">Welcome Back, Akhi.</p>
           <h1>A story written with memories.</h1>
           <p>
-            This archive is a living cinematic journey. New chapters are always
-            being restored.
+            This archive is a living cinematic journey where each chapter can grow
+            with photographs, letters, voices, and moments that matter.
           </p>
           <div class="hero-actions">
-            <button class="btn-primary" type="button">Resume Chapter</button>
-            <button class="btn-secondary" type="button">View Diary</button>
+            <a class="btn-primary" href="#continue">Resume Chapter</a>
+            <a class="btn-secondary" href="pages/diary.html">Open Diary</a>
           </div>
         </section>
 
         <section class="section-block" id="continue">
-          <div class="section-heading">
-            <h2>Continue Watching</h2>
-          </div>
-          <article class="continue-card">
-            <div>
-              <h3>Opening Diary...</h3>
-              <p>This chapter hasn't been written yet.</p>
-            </div>
-            <div
-              class="progress"
-              role="progressbar"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              aria-valuenow="35"
-            >
-              <span style="width: 35%"></span>
-            </div>
-          </article>
+          <div class="section-heading"><h2>Continue Watching</h2></div>
+          <div class="card-grid" id="continueGrid"></div>
+        </section>
+
+        <section class="section-block" id="featured">
+          <div class="section-heading"><h2>Featured Memory</h2></div>
+          <article class="featured-memory" id="featuredMemory"></article>
         </section>
 
         <section class="section-block" id="collections">
-          <div class="section-heading">
-            <h2>Memory Collections</h2>
-          </div>
+          <div class="section-heading"><h2>Memory Collections</h2></div>
           <div class="card-grid" id="collectionsGrid"></div>
+        </section>
+
+        <section class="section-block" id="previews">
+          <div class="section-heading"><h2>Archive Previews</h2></div>
+          <div class="preview-grid">
+            <section class="preview-panel"><h3>Diary Preview</h3><div id="diaryPreview"></div></section>
+            <section class="preview-panel"><h3>Gallery Preview</h3><div id="galleryPreview"></div></section>
+            <section class="preview-panel"><h3>Chat Preview</h3><div id="chatPreview"></div></section>
+            <section class="preview-panel"><h3>Video Preview</h3><div id="videoPreview"></div></section>
+            <section class="preview-panel"><h3>Timeline Preview</h3><div id="timelinePreview"></div></section>
+            <section class="preview-panel"><h3>Soundtrack Preview</h3><div id="soundtrackPreview"></div></section>
+            <section class="preview-panel"><h3>Secret Vault Preview</h3><div id="vaultPreview"></div></section>
+          </div>
+        </section>
+
+        <section class="section-block quick-links">
+          <div class="section-heading"><h2>Open Full Chapters</h2></div>
+          <div class="link-grid">
+            <a href="pages/diary.html">Diary</a>
+            <a href="pages/gallery.html">Gallery</a>
+            <a href="pages/chats.html">Chat Archive</a>
+            <a href="pages/videos.html">Video Archive</a>
+            <a href="pages/timeline.html">Timeline</a>
+            <a href="pages/soundtrack.html">Soundtrack</a>
+            <a href="pages/secret.html">Secret Vault</a>
+          </div>
         </section>
       </main>
 
@@ -101,6 +126,7 @@
     </div>
 
     <script src="js/loading.js"></script>
+    <script src="js/soundtrack.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

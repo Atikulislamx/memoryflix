@@ -1,0 +1,23 @@
+{
+  "continueWatching": [
+    {
+      "title": "Opening Diary",
+      "subtitle": "This chapter hasn't been written yet.",
+      "progress": 35,
+      "url": "pages/diary.html"
+    },
+    {
+      "title": "Letters & Voice Notes",
+      "subtitle": "Preparing Memories...",
+      "progress": 12,
+      "url": "pages/secret.html"
+    }
+  ],
+  "featuredMemory": {
+    "title": "Chapter: The First Soft Light",
+    "date": "2026-01-14",
+    "description": "A memory still unfolding, held between silence and glow.",
+    "ctaLabel": "View Timeline",
+    "ctaUrl": "pages/timeline.html"
+  }
+}

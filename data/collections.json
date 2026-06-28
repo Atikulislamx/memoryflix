@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Photos",
+    "description": "Frames preserved with light and stillness.",
+    "url": "pages/gallery.html"
+  },
+  {
+    "title": "Videos",
+    "description": "Scenes in motion, restored as episodes.",
+    "url": "pages/videos.html"
+  },
+  {
+    "title": "Diary",
+    "description": "Every memory has a written chapter.",
+    "url": "pages/diary.html"
+  },
+  {
+    "title": "Chat Archive",
+    "description": "Conversations kept as timeless dialogue.",
+    "url": "pages/chats.html"
+  },
+  {
+    "title": "Timeline",
+    "description": "Milestones, plans, and meaningful dates.",
+    "url": "pages/timeline.html"
+  },
+  {
+    "title": "Soundtrack",
+    "description": "Music that carries each chapter's mood.",
+    "url": "pages/soundtrack.html"
+  },
+  {
+    "title": "Letters",
+    "description": "Words meant for future moments.",
+    "url": "pages/secret.html"
+  },
+  {
+    "title": "Voice Notes",
+    "description": "Memories spoken softly, kept forever.",
+    "url": "pages/secret.html"
+  },
+  {
+    "title": "Secret Vault",
+    "description": "Private chapters under quiet protection.",
+    "url": "pages/secret.html"
+  },
+  {
+    "title": "Future Memories",
+    "description": "A placeholder for stories still becoming.",
+    "url": "pages/diary.html"
+  }
+]

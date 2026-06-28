@@ -1,0 +1,19 @@
+{
+  "playlistTitle": "Archive Soundtrack",
+  "tracks": [
+    {
+      "id": "chapter-intro",
+      "title": "Chapter Intro",
+      "artist": "AKHI//ARCHIVE",
+      "src": "assets/audio/chapter-intro.mp3",
+      "duration": "02:48"
+    },
+    {
+      "id": "soft-memory-loop",
+      "title": "Soft Memory Loop",
+      "artist": "AKHI//ARCHIVE",
+      "src": "assets/audio/soft-memory-loop.mp3",
+      "duration": "03:22"
+    }
+  ]
+}
