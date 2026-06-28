@@ -13,14 +13,30 @@
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-    <div class="loading-screen" id="loadingScreen" aria-live="polite">
-      <p class="loading-line" id="loadingLine">Preparing Memories...</p>
+    <a class="skip-link" href="#mainContent">Skip to content</a>
+
+    <div
+      class="loading-screen"
+      id="loadingScreen"
+      aria-live="polite"
+      aria-label="Loading memory archive"
+    >
+      <div class="loading-frame">
+        <p class="loading-overline">AKHI//ARCHIVE</p>
+        <p class="loading-line" id="loadingLine">Preparing Memories...</p>
+        <div class="loading-progress" aria-hidden="true">
+          <span></span>
+        </div>
+      </div>
     </div>
 
     <section class="intro-screen hidden" id="introScreen" aria-label="Intro">
       <p class="intro-kicker">AKHI//ARCHIVE</p>
       <h1>Every Memory Has a Chapter.</h1>
-      <button id="beginArchiveBtn" class="btn-primary">Enter Archive</button>
+      <p class="intro-copy">
+        Some stories are written with ink. Ours is written with memories.
+      </p>
+      <button id="beginArchiveBtn" class="btn-primary btn-ripple">Enter Archive</button>
     </section>
 
     <section
@@ -29,9 +45,14 @@
       aria-label="Profile selection"
     >
       <h2>Who's watching memories today?</h2>
-      <button class="profile-card" id="profileAkhiBtn">
+      <button
+        class="profile-card btn-ripple"
+        id="profileAkhiBtn"
+        aria-label="Select Akhi profile"
+      >
         <span class="profile-avatar" aria-hidden="true">🦋</span>
-        <span>🦋 Ꮲꫝ፝֟፝ᴋʜɪ 🦋</span>
+        <span class="profile-name">🦋 Ꮲꫝ፝֟፝ᴋʜɪ 🦋</span>
+        <span class="profile-badge">Primary Archive</span>
       </button>
       <p class="subtle-note">Previously known as Mayabi.</p>
     </section>
@@ -51,8 +72,13 @@
         </nav>
       </header>
 
-      <main>
+      <main id="mainContent" tabindex="-1">
         <section class="hero" id="hero">
+          <div class="hero-light hero-light--one" aria-hidden="true"></div>
+          <div class="hero-light hero-light--two" aria-hidden="true"></div>
+          <div class="hero-particles" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
           <p class="hero-kicker">Welcome Back, Akhi.</p>
           <h1>A story written with memories.</h1>
           <p>
@@ -60,17 +86,18 @@
             being restored.
           </p>
           <div class="hero-actions">
-            <button class="btn-primary" type="button">Resume Chapter</button>
-            <button class="btn-secondary" type="button">View Diary</button>
+            <button class="btn-primary btn-ripple" type="button">Resume Chapter</button>
+            <button class="btn-secondary btn-ripple" type="button">View Diary</button>
           </div>
         </section>
 
-        <section class="section-block" id="continue">
+        <section class="section-block reveal-on-scroll" id="continue">
           <div class="section-heading">
             <h2>Continue Watching</h2>
           </div>
           <article class="continue-card">
             <div>
+              <p class="eyebrow">Chapter 01</p>
               <h3>Opening Diary...</h3>
               <p>This chapter hasn't been written yet.</p>
             </div>
@@ -81,12 +108,13 @@
               aria-valuemax="100"
               aria-valuenow="35"
             >
-              <span style="width: 35%"></span>
+              <span></span>
             </div>
+            <p class="progress-label">35% memory restored</p>
           </article>
         </section>
 
-        <section class="section-block" id="collections">
+        <section class="section-block reveal-on-scroll" id="collections">
           <div class="section-heading">
             <h2>Memory Collections</h2>
           </div>
@@ -95,7 +123,7 @@
       </main>
 
       <footer class="site-footer">
-        <p>AKHI//ARCHIVE · Built as a timeless memory archive.</p>
+        <p>AKHI//ARCHIVE · Every Memory Has a Chapter.</p>
         <p class="footer-easter-egg">the things i never asked for</p>
       </footer>
     </div>

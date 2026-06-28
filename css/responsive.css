@@ -1,7 +1,19 @@
+@media (max-width: 960px) {
+  .hero {
+    min-height: auto;
+    padding-top: clamp(2.5rem, 8vw, 4rem);
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+}
+
 @media (max-width: 720px) {
   .top-nav {
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.7rem;
   }
 
   .top-nav ul {
@@ -9,7 +21,45 @@
     gap: 0.75rem;
   }
 
+  .hero h1 {
+    max-width: 18ch;
+  }
+
   .hero-actions {
     flex-wrap: wrap;
+  }
+
+  .profile-card {
+    min-width: min(300px, 100%);
+  }
+}
+
+@media (max-width: 520px) {
+  .loading-screen,
+  .intro-screen,
+  .profile-screen {
+    padding: 1.2rem;
+  }
+
+  .loading-frame {
+    border-radius: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  .hero-actions {
+    display: grid;
+    width: 100%;
+  }
+
+  .section-block {
+    padding-inline: 1rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 }
